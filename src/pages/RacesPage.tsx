@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Layout, Card, Row, Col, Modal, Tag, Spin, Typography } from 'antd'
 import { useRaceResults } from '../hooks/useRaceResults'
 import NavBar from '../Components/NavBar'
-import type { Race } from '../types/race.ts'
+import type { Race } from '../types/race'
 
 const { Content } = Layout
 

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useDrivers } from '../hooks/useDrivers.ts'
+import { useDrivers } from '../hooks/useDrivers'
 import { Card, Row, Col, Spin, Layout, Typography, Modal, Divider } from 'antd'
 import type { Driver } from '../types/driver'
 import NavBar from '../Components/NavBar'

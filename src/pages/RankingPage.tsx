@@ -1,6 +1,6 @@
 import { Layout, Tabs, Table, Tag, Spin, Typography } from 'antd'
-import { useDriverStandings } from '../hooks/useRankings'
-import { useConstructorStandings } from '../hooks/useRankings'
+import { useDriverStandings, useConstructorStandings } from '../hooks/useRankings'
+import type { DriverStanding, ConstructorStanding } from '../types/race'
 import NavBar from '../Components/NavBar'
 
 const { Content } = Layout
@@ -28,7 +28,7 @@ export default function RankingPage() {
     {
       title: 'Driver',
       key: 'driver',
-      render: (_: unknown, record: any) => (
+      render: (_: unknown, record: DriverStanding) => (
         <div className="flex flex-col">
           <span className="text-white font-semibold">
             {record.Driver.givenName} {record.Driver.familyName}
@@ -40,7 +40,7 @@ export default function RankingPage() {
     {
       title: 'Nationality',
       key: 'nationality',
-      render: (_: unknown, record: any) => (
+      render: (_: unknown, record: DriverStanding) => (
         <span className="text-zinc-400">{record.Driver.nationality}</span>
       )
     },
@@ -81,14 +81,14 @@ export default function RankingPage() {
     {
       title: 'Constructor',
       key: 'constructor',
-      render: (_: unknown, record: any) => (
+      render: (_: unknown, record: ConstructorStanding) => (
         <span className="text-white font-semibold">{record.Constructor.name}</span>
       )
     },
     {
       title: 'Nationality',
       key: 'nationality',
-      render: (_: unknown, record: any) => (
+      render: (_: unknown, record: ConstructorStanding) => (
         <span className="text-zinc-400">{record.Constructor.nationality}</span>
       )
     },
