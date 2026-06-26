@@ -1,73 +1,54 @@
-# React + TypeScript + Vite
+# F1 Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A real-time Formula 1 dashboard built with React, TypeScript, and Vite. Displays current drivers, race results, and championship standings using live data from the OpenF1 and Ergast APIs.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Drivers Page** — Browse the current F1 grid with driver cards, headshots, and detailed info modals
+- **Races Page** — View all races in the current season with podium results in a modal
+- **Rankings Page** — Driver and constructor championship standings with sortable tables and 50/50 tab layout
+- **Responsive Design** — Works across desktop and mobile with Ant Design + Tailwind CSS
+- **Dark Theme** — Consistent dark UI with red F1 accent styling
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** + **TypeScript 6** + **Vite 8**
+- **Ant Design 6** — UI components (Cards, Tables, Modals, Tabs)
+- **Tailwind CSS 4** — Utility styling
+- **React Query (TanStack)** — Data fetching and caching
+- **React Router 7** — Client-side routing
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+├── Components/    # Shared components (NavBar)
+├── hooks/         # Custom hooks for data fetching
+├── pages/         # Page components (Drivers, Races, Ranking, Welcome)
+├── services/      # API fetch functions
+├── types/         # TypeScript type definitions
+├── App.tsx        # Router setup and theme config
+└── App.css        # Global CSS overrides
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm install
+npm run dev
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Build
+
+```bash
+npm run build
+npm run preview
+```
+
+## Deployment
+
+Configured for Vercel. Add a `vercel.json` with SPA rewrites:
+
+```json
+{ "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }] }
 ```
