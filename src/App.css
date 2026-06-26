@@ -1,0 +1,44 @@
+.nav-menu .ant-menu-item {
+  flex: 1;
+  text-align: center;
+  font-size: 18px;
+  line-height: 56px !important;
+  height: 56px !important;
+}
+
+/* Remove the default selected block background */
+.nav-menu .ant-menu-item-selected {
+  background-color: transparent !important;
+  position: relative;
+}
+
+/* Red underline for selected item */
+.nav-menu .ant-menu-item-selected::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  height: 3px !important;
+  background-color: #FF1E00 !important;
+  border-radius: 0 !important;
+  transform: none !important;
+}
+
+/* hover时变红背景 */
+.nav-menu .ant-menu-item:not(.ant-menu-item-selected):hover {
+  background-color: #d72108 !important;
+}
+
+/* Ranking page tabs: 50/50 split */
+.ranking-tabs .ant-tabs-nav-list {
+  width: 100%;
+}
+
+.ranking-tabs .ant-tabs-tab {
+  flex: 1;
+  justify-content: center;
+  font-size: 18px;
+  padding: 12px 0;
+}
