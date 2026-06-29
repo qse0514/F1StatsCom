@@ -1,5 +1,5 @@
 {
-  "installCommand": "npm install || (cat /vercel/.npm/_logs/*.log && exit 1)",
+  "installCommand": "npm install",
   "build": {
     "env": {
       "NODE_VERSION": "24",
