@@ -1,4 +1,4 @@
-# F1 Dashboard
+# F1 StatsCom Try it here -> f1-stats-com.vercel.app
 
 A real-time Formula 1 dashboard built with React, TypeScript, and Vite. Displays current drivers, race results, and championship standings using live data from the OpenF1 and Ergast APIs.
 
