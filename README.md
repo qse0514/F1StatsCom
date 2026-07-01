@@ -1,43 +1,37 @@
 # F1 StatsCom
 
-A Formula 1 statistics dashboard built with React and TypeScript, providing real-time driver information, race results, and championship standings.
+A Formula 1 statistics dashboard that displays live driver data, race results, and championship standings for the current season.
 
-**Live Demo:** [f1-stats-com.vercel.app](https://f1-stats-com.vercel.app)
-
----
-
-## Features
-
-- **Driver Grid** - Browse the current F1 grid with driver cards showing headshots, team colors, and numbers. Click any card to view detailed driver info in a modal.
-- **Race Results** - View all races from the current season with circuit details. Click a race to see the podium finishers with points.
-- **Championship Standings** - Tabbed view of both Driver and Constructor championship standings with position, wins, and points.
-- **Dark Theme** - Full dark-mode UI with F1 red (#FF1E00) accent color and team-colored highlights.
-- **Responsive Layout** - Adaptive grid that works across desktop, tablet, and mobile.
+**Live:** https://f1-stats-com.vercel.app
 
 ---
 
 ## Tech Stack
 
-| Category       | Technology                          |
-| -------------- | ----------------------------------- |
-| Framework      | React 19                            |
-| Language       | TypeScript 6                        |
-| Build Tool     | Vite 8                              |
-| UI Library     | Ant Design 6                        |
-| Styling        | Tailwind CSS 4                      |
-| Data Fetching  | TanStack React Query 5              |
-| Routing        | React Router DOM 7                  |
-| Deployment     | Vercel                              |
-| Runtime        | Node.js >= 24                       |
+- React 19 + TypeScript 6
+- Vite 8
+- Ant Design 6
+- Tailwind CSS 4
+- TanStack React Query 5
+- React Router DOM 7
 
 ---
 
-## APIs
+## Data Sources
 
-| Source                                                  | Used For                              |
-| ------------------------------------------------------- | ------------------------------------- |
-| [OpenF1 API](https://api.openf1.org)                    | Current driver data and headshots     |
-| [Jolpi Ergast API](https://api.jolpi.ca/ergast)         | Race results and championship standings |
+- [OpenF1 API](https://api.openf1.org) — driver profiles and headshots
+- [Jolpi Ergast API](https://api.jolpi.ca/ergast) — race results and championship standings
+
+---
+
+## Pages
+
+| Route             | Description                                      |
+| ----------------- | ------------------------------------------------ |
+| `/`               | Welcome page with full-screen hero               |
+| `/driver/overall` | Driver grid with clickable cards and detail modal |
+| `/races`          | Race cards for the current season with podium modal |
+| `/ranking`        | Driver and constructor standings in tabbed tables |
 
 ---
 
@@ -45,272 +39,46 @@ A Formula 1 statistics dashboard built with React and TypeScript, providing real
 
 ```
 src/
-├── Components/
-│   └── NavBar.tsx            # Shared navigation bar with gradient background
-├── hooks/
-│   ├── useDrivers.ts         # TanStack Query hook for driver data
-│   ├── useRaceResults.ts     # TanStack Query hook for race results
-│   └── useRankings.ts        # TanStack Query hooks for standings
-├── pages/
-│   ├── WelcomePage.tsx       # Landing page with hero background
-│   ├── DriversPage.tsx       # Driver grid with detail modal
-│   ├── RacesPage.tsx         # Race cards with podium modal
-│   └── RankingPage.tsx       # Championship standings tables
-├── services/
-│   └── F1api.ts              # API fetch functions
-├── types/
-│   ├── driver.ts             # Driver type definitions
-│   └── race.ts              # Race, standings type definitions
-├── App.tsx                   # Root component with routing and theme
-└── main.tsx                  # Entry point
+├── Components/NavBar.tsx       — shared navigation bar
+├── hooks/                      — React Query data-fetching hooks
+├── pages/                      — route-level page components
+├── services/F1api.ts           — API fetch functions
+├── types/                      — TypeScript type definitions
+├── App.tsx                     — routing and Ant Design theme config
+└── main.tsx                    — entry point
 ```
 
 ---
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js >= 24
-
-### Installation
-
 ```bash
+# requires Node.js >= 24
 npm install
-```
-
-### Development
-
-```bash
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+Dev server runs at http://localhost:5173.
 
-### Build
+---
 
-```bash
-npm run build
-```
+## Scripts
 
-### Preview Production Build
-
-```bash
-npm run preview
-```
-
-### Lint
-
-```bash
-npm run lint
-```
+| Command           | Action                        |
+| ----------------- | ----------------------------- |
+| `npm run dev`     | Start dev server              |
+| `npm run build`   | Type-check and build for prod |
+| `npm run preview` | Preview production build      |
+| `npm run lint`    | Run ESLint                    |
 
 ---
 
 ## Deployment
 
-The app is deployed on **Vercel** with the following configuration:
+Hosted on Vercel with these settings:
 
-- **Build Command:** `npm run build`
-- **Output Directory:** `dist`
-- **Install Command:** `npm install`
-- **Node.js Version:** 24 (set via Vercel Dashboard environment variable)
-- **SPA Routing:** All paths rewrite to `/index.html`
-
----
-
-## Routes
-
-| Path              | Page         | Description                     |
-| ----------------- | ------------ | ------------------------------- |
-| `/`               | Welcome      | Hero landing page               |
-| `/driver/overall` | Drivers      | Current grid with driver cards  |
-| `/races`          | Races        | Season race results             |
-| `/ranking`        | Ranking      | Driver & constructor standings  |
-<<<<<<< HEAD
-# F1 StatsCom Try it here -> f1-stats-com.vercel.app
-=======
-# F1 StatsCom
-
-A Formula 1 statistics dashboard built with React and TypeScript, providing real-time driver information, race results, and championship standings.
-
-**Live Demo:** [f1-stats-com.vercel.app](https://f1-stats-com.vercel.app)
-
----
-
-## Features
-
-- **Driver Grid** - Browse the current F1 grid with driver cards showing headshots, team colors, and numbers. Click any card to view detailed driver info in a modal.
-- **Race Results** - View all races from the current season with circuit details. Click a race to see the podium finishers with points.
-- **Championship Standings** - Tabbed view of both Driver and Constructor championship standings with position, wins, and points.
-- **Dark Theme** - Full dark-mode UI with F1 red (#FF1E00) accent color and team-colored highlights.
-- **Responsive Layout** - Adaptive grid that works across desktop, tablet, and mobile.
-
----
-
-## Tech Stack
-
-| Category       | Technology                          |
-| -------------- | ----------------------------------- |
-| Framework      | React 19                            |
-| Language       | TypeScript 6                        |
-| Build Tool     | Vite 8                              |
-| UI Library     | Ant Design 6                        |
-| Styling        | Tailwind CSS 4                      |
-| Data Fetching  | TanStack React Query 5              |
-| Routing        | React Router DOM 7                  |
-| Deployment     | Vercel                              |
-| Runtime        | Node.js >= 24                       |
-
----
-
-## APIs
-
-| Source                                                  | Used For                              |
-| ------------------------------------------------------- | ------------------------------------- |
-| [OpenF1 API](https://api.openf1.org)                    | Current driver data and headshots     |
-| [Jolpi Ergast API](https://api.jolpi.ca/ergast)         | Race results and championship standings |
-
----
-
-## Project Structure
-
-```
-src/
-├── Components/
-│   └── NavBar.tsx            # Shared navigation bar with gradient background
-├── hooks/
-│   ├── useDrivers.ts         # TanStack Query hook for driver data
-│   ├── useRaceResults.ts     # TanStack Query hook for race results
-│   └── useRankings.ts        # TanStack Query hooks for standings
-├── pages/
-│   ├── WelcomePage.tsx       # Landing page with hero background
-│   ├── DriversPage.tsx       # Driver grid with detail modal
-│   ├── RacesPage.tsx         # Race cards with podium modal
-│   └── RankingPage.tsx       # Championship standings tables
-├── services/
-│   └── F1api.ts              # API fetch functions
-├── types/
-│   ├── driver.ts             # Driver type definitions
-│   └── race.ts              # Race, standings type definitions
-├── App.tsx                   # Root component with routing and theme
-└── main.tsx                  # Entry point
-```
-
----
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js >= 24
-
-### Installation
-
-```bash
-npm install
-```
-
-### Development
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:5173](http://localhost:5173) in your browser.
-
-### Build
-
-```bash
-npm run build
-```
-
-### Preview Production Build
-
-```bash
-npm run preview
-```
-
-### Lint
-
-```bash
-npm run lint
-```
-
----
-
-## Deployment
-
-The app is deployed on **Vercel** with the following configuration:
-
-- **Build Command:** `npm run build`
-- **Output Directory:** `dist`
-- **Install Command:** `npm install`
-- **Node.js Version:** 24 (set via Vercel Dashboard environment variable)
-- **SPA Routing:** All paths rewrite to `/index.html`
-
----
-
-## Routes
-
-| Path              | Page         | Description                     |
-| ----------------- | ------------ | ------------------------------- |
-| `/`               | Welcome      | Hero landing page               |
-| `/driver/overall` | Drivers      | Current grid with driver cards  |
-| `/races`          | Races        | Season race results             |
-| `/ranking`        | Ranking      | Driver & constructor standings  |
-# F1 Dashboard
->>>>>>> 7f1020b (docs: rewrite README with project overview and Vercel deployment link)
-
-A real-time Formula 1 dashboard built with React, TypeScript, and Vite. Displays current drivers, race results, and championship standings using live data from the OpenF1 and Ergast APIs.
-
-## Features
-
-- **Drivers Page** — Browse the current F1 grid with driver cards, headshots, and detailed info modals
-- **Races Page** — View all races in the current season with podium results in a modal
-- **Rankings Page** — Driver and constructor championship standings with sortable tables and 50/50 tab layout
-- **Responsive Design** — Works across desktop and mobile with Ant Design + Tailwind CSS
-- **Dark Theme** — Consistent dark UI with red F1 accent styling
-
-## Tech Stack
-
-- **React 19** + **TypeScript 6** + **Vite 8**
-- **Ant Design 6** — UI components (Cards, Tables, Modals, Tabs)
-- **Tailwind CSS 4** — Utility styling
-- **React Query (TanStack)** — Data fetching and caching
-- **React Router 7** — Client-side routing
-
-## Project Structure
-
-```
-src/
-├── Components/    # Shared components (NavBar)
-├── hooks/         # Custom hooks for data fetching
-├── pages/         # Page components (Drivers, Races, Ranking, Welcome)
-├── services/      # API fetch functions
-├── types/         # TypeScript type definitions
-├── App.tsx        # Router setup and theme config
-└── App.css        # Global CSS overrides
-```
-
-## Getting Started
-
-```bash
-npm install
-npm run dev
-```
-
-## Build
-
-```bash
-npm run build
-npm run preview
-```
-
-## Deployment
-
-Configured for Vercel. Add a `vercel.json` with SPA rewrites:
-
-```json
-{ "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }] }
-```
+- **Install:** `npm install`
+- **Build:** `npm run build`
+- **Output:** `dist`
+- **Node.js:** 24 (set in Vercel Dashboard)
+- **Routing:** SPA rewrite to `/index.html`
