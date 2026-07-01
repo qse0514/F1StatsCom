@@ -42,3 +42,8 @@
   font-size: 18px;
   padding: 12px 0;
 }
+
+/* Consistent row height for both Drivers and Constructors tables */
+.ranking-tabs .ant-table-tbody > tr > td {
+  padding: 20px 16px;
+}
